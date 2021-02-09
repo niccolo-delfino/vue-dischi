@@ -1,13 +1,14 @@
 var app = new Vue({
   el: `#app`,
   data: {
-    album: [],
+    albums: [],
   },
   mounted(){
     axios
       .get('https://flynn.boolean.careers/exercises/api/array/music')
       .then((result) =>{
-        this.album = result.data.response;
+        this.albums = result.data.response;
+        console.log(this.albums);
       })
   },
   methods: {
